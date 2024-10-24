@@ -1,13 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import type { sessionType } from '@/types/sessionContextProps';
 import { SessionContext } from '@/context/session';
 import { PusherContext } from '@/context/pusher';
 
 export default function Sessions() {
-  // const [sessions, setSessions] = useState<sessionType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const {menuCount,session17, setSession17,session18, setSession18,session19, setSession19, session20, setSession20, session21,setSession21, session22, setSession22} = useContext(SessionContext)
+  const {menuCount,session17,session18,session19, session20, session21, session22} = useContext(SessionContext)
   const {acompanhante} = useContext(PusherContext)
 
   

@@ -1,9 +1,8 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import type { PusherContextProps, PusherProviderProps } from '@/types/pusherContextProps';
 import Pusher, { Channel } from 'pusher-js';
-import { SessionContext } from './session';
 
 
 export const PusherContext = createContext<PusherContextProps>({
