@@ -11,7 +11,7 @@ const Horarios = () => {
 
   useEffect(() => {
     if(channel == null){
-      router.back()
+      router.replace("/")
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[channel])
