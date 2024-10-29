@@ -40,7 +40,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       console.log("teste com acompanhante")
       const pusherInstance = new Pusher(`${process.env.NEXT_PUBLIC_PUSHER_KEY}`, {
         cluster: `${process.env.NEXT_PUBLIC_PUSHER_CLUSTER}`,
-        authEndpoint: `http://localhost:3333/proc/Controllers/server.php`,
+        authEndpoint: `${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/server.php`,
         auth: {
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       });
       const pusherAcomp = new Pusher(`${process.env.NEXT_PUBLIC_PUSHER_KEY}`, {
         cluster: `${process.env.NEXT_PUBLIC_PUSHER_CLUSTER}`,
-        authEndpoint: `http://localhost:3333/proc/Controllers/server.php`,
+        authEndpoint: `${process.env.NEXT_PUBLIC_API_URL}proc/Controllers/server.php`,
         auth: {
           headers: {
             'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       console.log("teste sem acompanhante")
       const pusherInstance = new Pusher(`${process.env.NEXT_PUBLIC_PUSHER_KEY}`, {
         cluster: `${process.env.NEXT_PUBLIC_PUSHER_CLUSTER}`,
-        authEndpoint: `http://localhost:3333/proc/Controllers/server.php`,
+        authEndpoint: `${process.env.NEXT_PUBLIC_API_URL}proc/Controllers/server.php`,
         auth: {
           headers: {
             'Content-Type': 'application/json',

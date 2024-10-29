@@ -12,7 +12,7 @@ export default function Sessions() {
 
   const subscribeSession = async (item: sessionType) => {  
     
-    await axios.post('http://localhost:3333/proc/Controllers/takeSession.php', {
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/takeSession.php`, {
       session_id: item.session_id,
       session_time: item.session_time,
       acompanhante: acompanhante
