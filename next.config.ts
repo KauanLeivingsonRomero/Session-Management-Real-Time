@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
-  basePath: '/vagas-next/dist',
+  // basePath: '/vagas-next/dist',
   output: "export",
   distDir: 'dist'
 };

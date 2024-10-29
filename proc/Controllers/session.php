@@ -5,7 +5,7 @@ require './suporte.php';
 require './cors.php';
 $exec = new Processo();
 
-$sessions = $exec->lista('session_id, session_time, session_users', 'tb_sessions');
+$sessions = $exec->lista('session_id, session_time, session_users, session_limit', 'tb_sessions');
 
 echo json_encode($sessions)
 
