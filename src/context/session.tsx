@@ -57,7 +57,7 @@ const SessionProvider = ({ children }: SessionProviderProps) => {
   useEffect(() => {
     const fetchSessions = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/session.php`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}proc/Controllers/session.php`);
         const sessions = response.data
         console.log(sessions)
         sessions.forEach((session: sessionType) => {
