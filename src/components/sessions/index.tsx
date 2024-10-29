@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import type { sessionType } from '@/types/sessionContextProps';
 import { SessionContext } from '@/context/session';
@@ -12,6 +12,7 @@ export default function Sessions() {
     session21Limit,
     session22Limit} = useContext(SessionContext)
   const {acompanhante} = useContext(PusherContext)
+  const [block, setBlock] = useState(false)
 
   
 
@@ -24,6 +25,7 @@ export default function Sessions() {
     })
     .then(() => {
       console.log(session17)
+      setBlock(true)
     })
   };
 
@@ -91,8 +93,9 @@ export default function Sessions() {
       <h1 className='font-bold text-2xl mb-10'>Sessoes disponiveis</h1>
       <div className='flex flex-wrap gap-4'>
       {sessions.map((item) => {
+        
         const vagasRestantes = item.session_limit - item.session_users;
-        const isButtonDisabled = acompanhante ? vagasRestantes < 2 : vagasRestantes < 1;
+        const isButtonDisabled = acompanhante ? vagasRestantes < 2 : vagasRestantes < 1 || block;
 
         return (
           <div className='flex gap-2 flex-col' key={item.session_id}>
