@@ -25,6 +25,7 @@ export default function Sessions() {
     })
     .then(() => {
       console.log(session17)
+    }).finally(() => {
       setBlock(true)
     })
   };
