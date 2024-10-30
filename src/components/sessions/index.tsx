@@ -3,8 +3,10 @@ import axios from 'axios';
 import type { sessionType } from '@/types/sessionContextProps';
 import { SessionContext } from '@/context/session';
 import { PusherContext } from '@/context/pusher';
+import { useRouter } from 'next/navigation';
 
 export default function Sessions() {
+  const router = useRouter()
   const {menuCount,session17,session18,session19, session20, session21, session22,session17Limit,
     session18Limit,
     session19Limit,
@@ -13,6 +15,7 @@ export default function Sessions() {
     session22Limit} = useContext(SessionContext)
   const {acompanhante} = useContext(PusherContext)
   const [block, setBlock] = useState(false)
+  
 
   
 
@@ -25,6 +28,7 @@ export default function Sessions() {
     })
     .then((res) => {
       console.log(res)
+      router.push(`/finish/${res.data.session_time}`)
     }).finally(() => {
 
     })
