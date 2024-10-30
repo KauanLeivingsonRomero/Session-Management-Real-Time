@@ -19,7 +19,7 @@ export default function Sessions() {
 
   
 
-  const subscribeSession = async (item: sessionType) => {  
+  const subscribeSession = async (item: sessionType) => { 
     setBlock(true)
     await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/takeSession.php`, {
       session_id: item.session_id,
@@ -28,9 +28,7 @@ export default function Sessions() {
     })
     .then((res) => {
       console.log(res)
-      router.push(`/finish/${res.data.session_time}`)
-    }).finally(() => {
-
+      router.replace(`/finish/${res.data.session_time}`)
     })
   };
 
