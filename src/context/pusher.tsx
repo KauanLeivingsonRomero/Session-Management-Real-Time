@@ -54,7 +54,7 @@ const PusherProvider = ({ children }: PusherProviderProps) => {
       });
       const pusherAcomp = new Pusher(`${process.env.NEXT_PUBLIC_PUSHER_KEY}`, {
         cluster: `${process.env.NEXT_PUBLIC_PUSHER_CLUSTER}`,
-        authEndpoint: `${process.env.NEXT_PUBLIC_API_URL}proc/Controllers/server.php`,
+        authEndpoint: `${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/server.php`,
         auth: {
           headers: {
             'Content-Type': 'application/json',

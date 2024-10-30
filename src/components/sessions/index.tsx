@@ -17,16 +17,16 @@ export default function Sessions() {
   
 
   const subscribeSession = async (item: sessionType) => {  
-    
+    setBlock(true)
     await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/proc/Controllers/takeSession.php`, {
       session_id: item.session_id,
       session_time: item.session_time,
       acompanhante: acompanhante
     })
-    .then(() => {
-      console.log(session17)
+    .then((res) => {
+      console.log(res)
     }).finally(() => {
-      setBlock(true)
+
     })
   };
 
