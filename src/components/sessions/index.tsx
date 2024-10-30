@@ -30,6 +30,13 @@ export default function Sessions() {
       console.log(res)
       router.replace(`/finish/${res.data.session_time}`)
     })
+
+    await axios.post(`${process.env.NEXT_PUBLIC_API_URL}proc/Controllers/queue.php`, {
+      activityHour: item.session_time,
+      activityid: item.session_id
+    }).then((res) => {
+      console.log(res.data)
+    })
   };
 
   const sessions = [

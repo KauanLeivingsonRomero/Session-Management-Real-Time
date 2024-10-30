@@ -23,7 +23,8 @@ const RegisterForm = () => {
     setUserEmail(data.email)  
     setAcompanhante(data.checkbox)
 
-    // subscribeUser(data)
+    
+
   }
 
   return (
